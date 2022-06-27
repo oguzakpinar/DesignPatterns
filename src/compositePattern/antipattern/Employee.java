@@ -8,14 +8,22 @@ public class Employee {
     private String name;
     private String dept;
     private int salary;
-    private Employee manager;
+    private List<Employee> subordinates;
 
     // constructor
-    public Employee(String name, String dept, int sal, Employee manager) {
+    public Employee(String name, String dept, int sal) {
         this.name = name;
         this.dept = dept;
         this.salary = sal;
-        this.manager = manager;
+        this.subordinates = new ArrayList<>();
+    }
+
+    public void addItem(Employee employee) {
+        subordinates.add(employee);
+    }
+
+    public List<Employee> getSubordinates() {
+        return subordinates;
     }
 
     public String getName() {
@@ -28,10 +36,6 @@ public class Employee {
 
     public int getSalary() {
         return salary;
-    }
-
-    public Employee getManager() {
-        return manager;
     }
 
     public String toString(){

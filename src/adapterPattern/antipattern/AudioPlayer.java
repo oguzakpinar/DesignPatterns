@@ -1,6 +1,6 @@
 package adapterPattern.antipattern;
 
-public class AudioPlayer {
+public class AudioPlayer implements MediaPlayer {
     public void play(String audioType, String fileName) {
 
         if(audioType.equalsIgnoreCase("mp3")){

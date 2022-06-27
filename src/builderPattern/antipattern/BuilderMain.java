@@ -3,14 +3,15 @@ package builderPattern.antipattern;
 public class BuilderMain {
     public static void main(String[] args) {
 
-        Meal vegMeal = new Meal(new VegBurger(), new Coke());
-        System.out.println("Veg Meal");
-        vegMeal.showItems();
-        System.out.println("Total Cost: " + vegMeal.getCost());
+        Menu menu = new Menu();
+        System.out.println("\n\nChampions Meal");
+        Meal ch = menu.getChampionMenu();
+        ch.showItems();
+        System.out.println("Total Cost: " + ch.getTotalPrice());
 
-        Meal nonVegMeal = new Meal(new ChickenBurger(), new Pepsi());
-        System.out.println("\n\nNon-Veg Meal");
-        nonVegMeal.showItems();
-        System.out.println("Total Cost: " + nonVegMeal.getCost());
+        System.out.println("\n\nEko Meal");
+        Meal eko = menu.getEkoMenu();
+        eko.showItems();
+        System.out.println("Total Cost: " + eko.getTotalPrice());
     }
 }
