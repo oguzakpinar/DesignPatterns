@@ -8,17 +8,17 @@ public class DecoratorMain {
         circle.draw();
 
         System.out.println("\nCircle of red border");
-        circle.border("Red");
+        BorderDecorator border = new BorderDecorator(circle, "Red");
+        border.draw();
 
 
         Shape redRectangle = new Rectangle();
-        System.out.println("\nRectangle of red border");
+        System.out.println("\nRectangle of purple border");
         redRectangle.draw();
-        redRectangle.border("Red");
+        border = new BorderDecorator(redRectangle, "Purple");
+        border.draw();
 
         System.out.println("\nRectangle of red border fill blue");
-        redRectangle.draw();
-        redRectangle.border("Red");
-        redRectangle.fill("Blue");
+        new FillDecorator(new BorderDecorator(new Rectangle(), "Blue"), "Green").draw();
     }
 }

@@ -1,6 +1,6 @@
 package proxyPattern.antipattern;
 
-public class Image {
+public class Image implements IImage{
     private String fileName;
 
     public Image(String fileName){
