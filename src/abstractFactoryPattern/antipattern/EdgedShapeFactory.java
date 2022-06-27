@@ -1,14 +1,13 @@
-package factoryMethodPattern.pattern;
+package abstractFactoryPattern.antipattern;
 
-public class ShapeFactory {
-    public Shape getShape(ShapeEnum type) {
-        switch (type) {
+public class EdgedShapeFactory extends AbstractFactory {
+    @Override
+    Shape getShape(ShapeEnum shape) {
+        switch (shape) {
             case SQUARE:
                 return new Square();
             case RECTANGLE:
                 return new Rectangle();
-            case CIRCLE:
-                return new Circle();
             case TRIANGLE:
                 return new Triangle();
         }

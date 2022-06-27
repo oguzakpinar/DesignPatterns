@@ -4,9 +4,9 @@ public class FactoryMethodMain {
 
     public static void main(String[] args) {
         ShapeFactory factory = new ShapeFactory();
-        drawShape(factory.getShape("C"));
-        drawShape(factory.getShape("R"));
-        drawShape(factory.getShape("S"));
+        for (ShapeEnum value : ShapeEnum.values()) {
+            drawShape(factory.getShape(value));
+        }
     }
 
     private static void drawShape(Shape s){

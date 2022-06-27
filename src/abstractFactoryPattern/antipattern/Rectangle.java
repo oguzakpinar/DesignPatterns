@@ -1,7 +1,8 @@
 package abstractFactoryPattern.antipattern;
 
-public class Rectangle {
-    public void drawRectangle() {
-        System.out.println("This is a rectangle");
+public class Rectangle implements Shape{
+    @Override
+    public String getName() {
+        return "rectangle";
     }
 }

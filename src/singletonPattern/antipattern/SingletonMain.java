@@ -9,6 +9,7 @@ public class SingletonMain {
         one.generateNumber();
         one.generateNumber();
         two.generateNumber();
+        two.generateNumber();
         one.readGeneratedNumbers();
     }
 }

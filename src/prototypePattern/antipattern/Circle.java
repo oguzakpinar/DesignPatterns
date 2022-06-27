@@ -1,7 +1,12 @@
 package prototypePattern.antipattern;
 
-public class Circle {
-    public void drawCircle() {
-        System.out.println("This is a circle");
+public class Circle extends Shape{
+    public Circle() {
+        setName("circle");
+    }
+
+    @Override
+    protected ShapeEnum getType() {
+        return ShapeEnum.CIRCLE;
     }
 }

@@ -1,8 +1,8 @@
 package abstractFactoryPattern.antipattern;
 
-public class Square implements Shape{
+public class Triangle implements Shape{
     @Override
     public String getName() {
-        return "square";
+        return "triangle";
     }
 }

@@ -3,12 +3,15 @@ package prototypePattern.antipattern;
 public class PrototypeMain {
 
     public static void main(String[] args) {
-        Circle c = new Circle();
-        Square s = new Square();
-        Rectangle r = new Rectangle();
+        for (ShapeEnum value : ShapeEnum.values()) {
+            Shape s = ShapeCache.getShape(value);
+            s.draw();
+            s.setName(s.getName() + "1");
+        }
 
-        c.drawCircle();
-        r.drawRectangle();
-        s.drawSquare();
+        for (ShapeEnum value : ShapeEnum.values()) {
+            Shape s = ShapeCache.getShape(value);
+            s.draw();
+        }
     }
 }

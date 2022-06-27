@@ -1,7 +1,12 @@
 package prototypePattern.antipattern;
 
-public class Rectangle {
-    public void drawRectangle() {
-        System.out.println("This is a rectangle");
+public class Rectangle extends Shape {
+    public Rectangle() {
+        setName("rectangle");
+    }
+
+    @Override
+    protected ShapeEnum getType() {
+        return ShapeEnum.RECTANGLE;
     }
 }

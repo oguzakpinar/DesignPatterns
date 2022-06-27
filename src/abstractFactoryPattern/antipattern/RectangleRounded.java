@@ -1,7 +1,8 @@
 package abstractFactoryPattern.antipattern;
 
-public class RectangleRounded {
-    public void drawRectangle() {
-        System.out.println("This is a rounded rectangle");
+public class RectangleRounded implements ShapeRounded{
+    @Override
+    public String getName() {
+        return "rectangle";
     }
 }

@@ -1,7 +1,7 @@
 package factoryMethodPattern.pattern;
 
-class Rectangle implements Shape{
-    private String name = "rectangle";
+public class Triangle implements Shape{
+    private String name = "triangle";
     @Override
     public String getName() {
         return name;

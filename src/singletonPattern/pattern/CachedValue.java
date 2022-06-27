@@ -1,6 +1,7 @@
 package singletonPattern.pattern;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class CachedValue {
@@ -8,17 +9,22 @@ public class CachedValue {
     private List<Integer> cachedList;
     private static CachedValue cachedValue;
 
-    public List<Integer> getCachedList() {
-        return cachedList;
+    public synchronized void addCache(Integer value) {
+        cachedList.add(value);
     }
 
     private CachedValue() {
         cachedList = new ArrayList<>();
+        //cachedList = Collections.synchronizedList(new ArrayList<>());
     }
 
-    public static CachedValue getValue() {
+    public static synchronized CachedValue getValue() {
         if(cachedValue == null)
             cachedValue = new CachedValue();
         return cachedValue;
+    }
+
+    public void readGeneratedNumbers() {
+        cachedList.forEach(System.out::println);
     }
 }
